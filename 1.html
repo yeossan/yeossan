@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>손여산-1</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <hr>
+        <canvas id="myCanvas" width="500" height="500" style="background-color: aliceblue;"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+            context.beginPath();
+            context.strokeStyle="green";
+            context.lineWidth=8;
+            context.arc(200,100,75,0,2*Math.PI);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(100, 200);
+            context.lineTo(300, 200);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(200,300);
+            context.lineTo(200,200);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(320,320);
+            context.lineTo(320,75);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(340,320);
+            context.lineTo(340,75);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(220,250);
+            context.lineTo(320,250);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(200,340);
+            context.lineTo(200,450);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(340,450);
+            context.lineTo(340,340);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(200,390);
+            context.lineTo(340,390);
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(340,450);
+            context.lineTo(200,450);
+            context.stroke();
+        </script>
+    </body>
+</html>

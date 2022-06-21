@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정예은-5</title>
+        <meta charset="utf-8">
+        <script>
+            function show(){
+                var par=document.getElementById("parent");
+                var fruits=document.getElementsByName("fruits");
+                var imgsrc=null;
+
+                for(var i=0;i<fruits.length;i++){
+                    if(fruits[i].checked)
+                        imgsrc=fruits[i].value;
+                }
+                
+                var saved_img=document.getElementById("myimg");
+                if(saved_img)
+                    par.removeChild(saved_img);
+
+                var img=document.createElement("img");
+                img.setAttribute("id","myimg");
+                img.src=imgsrc;
+                img.width=200;
+                img.height=200;
+                par.appendChild(img);
+
+            }
+        </script>
+    </head>
+    <body id="parent">
+        <hr>
+        <input type="radio" name="fruits" value="apple.jpg">사과<br>
+        <input type="radio" name="fruits" value="banana.jpg">바나나<br>
+        <input type="radio" name="fruits" value="mango.png">망고<br><br>
+        <input type="button" value="Show Image" onclick="show()">
+        <hr>
+</body>
+</html>

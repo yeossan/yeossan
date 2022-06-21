@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정예은-2</title>
+        <meta charset="utf-8">
+        <script>
+            function show(){
+                var site=document.getElementById("site");
+                var sec=document.getElementById("sec").value;
+
+                var sel_site=site.options[site.selectedIndex].value;
+                var timerID=setTimeout(load(sel_site),sec*1000);
+                
+            }
+            function load(url){
+                window.open(url,"","width=1300,height=850");
+            }
+        </script>
+    </head>
+    <body>
+        <hr>
+        보여줄 사이트:<select name="sites" id="site">
+            <option value="https:/www.hansung.ac.kr" selected>한성대학교</option>
+            <option value="http://cse.hansung.ac.kr">컴퓨터공학부</option>
+            <option value="https://www.naver.com">네이버</option>
+        </select><br><br>
+        이동 지연 시간 (초):<input type="text" id="sec">
+        <input type="button" value="이동" onclick="show()">
+    </body>
+</html>

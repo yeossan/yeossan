@@ -1,0 +1,29 @@
+1. non-blocking i/o란 요청 처리가 끝나기 전에 다른 요청을 동시에 처리하는 것을 말한다
+2. callback function 이란 함수 안의 파라미터를 함수로 받는 것이다.
+예를 들어
+const add=(a,b)=>a+b;
+const minus=(a,b)=>a-b;
+function printAdd(calc,add,minus){
+    if(calc=='add')
+        add(20,10);
+    else
+        minus(20,10);
+}
+3.모듈이란 독립적 기능을 별도 파일로 분리한 것이다.
+ 예를 들어
+ //calc.js
+ let calc={};
+calc.add=function(a,b){
+    return a+b;
+}
+calc.multiply=function(a,b){
+    return a*b;
+}
+module.exports=calc;
+
+//ex.js
+var calc=require('./calc');
+var res1=calc.multiply(5,6);
+var res2=calc.add(5,6);
+
+이런 식으로 calc.js에 있는 함수들을 ex.js에서 사용할 수 있다.

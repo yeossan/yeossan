@@ -1,0 +1,33 @@
+let users = [
+    { name: 'CKJ', age: 45, math: 78, science: 80 },
+    { name: 'LHJ', age: 21, math: 67, science: 84 },
+    { name: 'BKE', age: 36, math: 55, science: 67 },
+    { name: 'TW', age: 48, math: 90, science: 78 },
+    { name: 'PM', age: 27, math: 88, science: 90 },
+    { name: 'JT', age: 33, math: 93, science: 88 },
+];
+
+users.sort((before,curr)=>{
+    if(before.math<curr.math) return 1;
+    else if(before.math==curr.math) return 0;
+    else return -1;
+})
+
+console.log(users);
+
+
+const aver20=users.filter(user=>user.age>=20&&user.age<30)
+                    .map(user=>user.math)
+                    .reduce((a,b,index,array)=>a+(b/array.length),0);
+
+const aver30=users.filter(user=>user.age>=30&&user.age<40)
+                    .map(user=>user.math)
+                    .reduce((a,b,index,array)=>a+(b/array.length),0);
+
+const aver40=users.filter(user=>user.age>=40&&user.age<50)
+                    .map(user=>user.math)
+                    .reduce((a,b,index,array)=>a+(b/array.length),0);
+
+console.log('20대 : ',aver20);
+console.log('30대 : ',aver30);
+console.log('40대 : ',aver40);
